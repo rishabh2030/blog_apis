@@ -1,0 +1,7 @@
+MAX_LENGTH = 'max_length'
+REQUIRED = 'required'
+BLANK = 'blank'
+MOBILE = 'mobile'
+PASSWORD = 'password'
+BLOG_TEXT = 'blog_text'
+POST_FILE='post_file'
