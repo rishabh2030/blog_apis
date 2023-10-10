@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "bef98853-69fc-4f5d-9b51-5a094b9e61b1",
+		"name": "Blog-server",
+		"description": "[http://127.0.0.1:8000/api/posts/blog/](http://127.0.0.1:8000/api/posts/blog/)\n\nDo all the operation POST GET DELETE  \nYou can in this post-man collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30403489"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\": \"9300203302\",\r\n    \"password\": \"mypassword123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url-local}}api/auth/register/",
+					"host": [
+						"{{base-url-local}}api"
+					],
+					"path": [
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"mypassword123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\": \"9300203302\",\r\n    \"password\": \"mypassword123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url-local}}api/auth/login/",
+					"host": [
+						"{{base-url-local}}api"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"mypassword123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4NTA3ODE1LCJpYXQiOjE2OTY5NzE4MTUsImp0aSI6IjQzZjBhM2I0OTk4NTRjMGU5MGFmOTE2ODUxMjQ3NTcxIiwidXNlcl9pZCI6NX0.epH8gwTSxq9VUigr-AczY7wZtbInLuQDuhyv16DJnlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "post_file",
+							"type": "file",
+							"src": "/C:/Users/risha/Downloads/resume_rishabh_sharma.pdf"
+						},
+						{
+							"key": "blog_text",
+							"value": "aasfdnsdaoifjaspidj oijajsd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base-url-local}}api/posts/blog/",
+					"host": [
+						"{{base-url-local}}api"
+					],
+					"path": [
+						"posts",
+						"blog",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_file",
+									"type": "file",
+									"src": "/C:/Users/risha/Downloads/resume_rishabh_sharma.pdf"
+								},
+								{
+									"key": "blog_text",
+									"value": "aasfdnsdaoifjaspidj oijajsd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/blog/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"blog",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Operation Successful\",\n    \"result\": {\n        \"blog_post_ID\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4NTA3ODE1LCJpYXQiOjE2OTY5NzE4MTUsImp0aSI6IjQzZjBhM2I0OTk4NTRjMGU5MGFmOTE2ODUxMjQ3NTcxIiwidXNlcl9pZCI6NX0.epH8gwTSxq9VUigr-AczY7wZtbInLuQDuhyv16DJnlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url-local}}api/posts/blog/",
+					"host": [
+						"{{base-url-local}}api"
+					],
+					"path": [
+						"posts",
+						"blog",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Posts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/blog/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"blog",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Operation Successful\",\n    \"result\": [\n        {\n            \"id\": 3,\n            \"created\": \"2023-10-10T20:44:25.794827Z\",\n            \"modified\": \"2023-10-10T20:44:25.814733Z\",\n            \"blog_id\": \"BLOG103\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_adsQdl9.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 4,\n            \"created\": \"2023-10-10T20:51:06.553585Z\",\n            \"modified\": \"2023-10-10T20:51:06.580578Z\",\n            \"blog_id\": \"BLOG104\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_J8NJS57.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 5,\n            \"created\": \"2023-10-10T20:51:08.030495Z\",\n            \"modified\": \"2023-10-10T20:51:08.051488Z\",\n            \"blog_id\": \"BLOG105\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_ebpkEva.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 6,\n            \"created\": \"2023-10-10T20:51:09.149867Z\",\n            \"modified\": \"2023-10-10T20:51:09.168867Z\",\n            \"blog_id\": \"BLOG106\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_dRtYR0o.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 7,\n            \"created\": \"2023-10-10T20:51:13.454261Z\",\n            \"modified\": \"2023-10-10T20:51:13.479263Z\",\n            \"blog_id\": \"BLOG107\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_mbXqv5K.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 8,\n            \"created\": \"2023-10-10T20:51:14.547315Z\",\n            \"modified\": \"2023-10-10T20:51:14.686995Z\",\n            \"blog_id\": \"BLOG108\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_qg7RQQW.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 9,\n            \"created\": \"2023-10-10T20:51:15.799866Z\",\n            \"modified\": \"2023-10-10T20:51:15.824074Z\",\n            \"blog_id\": \"BLOG109\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_Zk14V6z.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 4\n        },\n        {\n            \"id\": 10,\n            \"created\": \"2023-10-10T21:04:17.068929Z\",\n            \"modified\": \"2023-10-10T21:04:17.093932Z\",\n            \"blog_id\": \"BLOG110\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 5\n        },\n        {\n            \"id\": 11,\n            \"created\": \"2023-10-10T21:04:33.278417Z\",\n            \"modified\": \"2023-10-10T21:04:33.304351Z\",\n            \"blog_id\": \"BLOG111\",\n            \"post_file\": \"http://127.0.0.1:8000/media/post/files/resume_rishabh_sharma_OCmYzke.pdf\",\n            \"blog_text\": \"aasfdnsdaoifjaspidj oijajsd\",\n            \"user\": 5\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4NTA3ODE1LCJpYXQiOjE2OTY5NzE4MTUsImp0aSI6IjQzZjBhM2I0OTk4NTRjMGU5MGFmOTE2ODUxMjQ3NTcxIiwidXNlcl9pZCI6NX0.epH8gwTSxq9VUigr-AczY7wZtbInLuQDuhyv16DJnlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base-url-local}}api/posts/blog/?post_id=5",
+					"host": [
+						"{{base-url-local}}api"
+					],
+					"path": [
+						"posts",
+						"blog",
+						""
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Post",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/blog/?post_id=5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"blog",
+								""
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Operation Successful\",\n    \"result\": \"Post Deleted\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url-local",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}
